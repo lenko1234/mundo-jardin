@@ -34,8 +34,9 @@
 
     <header id="inicio" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Naturaleza <br> en tu <span class="text-gradient">Hogar</span></h1>
-            <p class="hero-subtitle">Vivero y Florería con estilo único.</p>
+            <div class="hero-logo-wrapper">
+                <img src="assets/logo_footer.png" alt="Mundo Jardín Logo">
+            </div>
             <a href="#productos" class="btn-primary">Ver Catálogo</a>
         </div>
         <div class="hero-image-container">
@@ -71,20 +72,75 @@
                 </div>
             </div>
             <div class="cta-container" style="margin-top: 3rem; text-align: center;">
-                <a href="https://wa.me/5493442123456" target="_blank" class="btn-primary btn-whatsapp"><i
+                <a href="https://wa.me/543442488208" target="_blank" class="btn-primary btn-whatsapp"><i
                         class="fa-brands fa-whatsapp"></i> Escríbenos</a>
             </div>
         </div>
     </section>
 
-    <section id="productos" class="gallery-section">
-        <h2 class="section-title">Galería</h2>
-        <div class="gallery-grid">
-            <!-- Placeholders for now, using CSS gradients/patterns if images fail -->
-            <div class="gallery-item item-1"></div>
-            <div class="gallery-item item-2"></div>
-            <div class="gallery-item item-3"></div>
-            <div class="gallery-item item-4"></div>
+    <!-- Adding GSAP for premium scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <section id="productos" class="hz-gallery-section">
+
+
+        <div class="hz-container">
+            <!-- Row 1: Left to Right -->
+            <div class="hz-row row-odd">
+                <div class="hz-item-wrapper">
+                    <div class="hz-inner-mask">
+                        <img src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=1200&q=80"
+                            alt="Plantas de Interior">
+                    </div>
+                    <div class="hz-content">
+                        <span class="hz-tag">Premium</span>
+                        <h3>Plantas de Interior</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Right to Left -->
+            <div class="hz-row row-even">
+                <div class="hz-item-wrapper">
+                    <div class="hz-inner-mask">
+                        <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?auto=format&fit=crop&w=1200&q=80"
+                            alt="Flores de Estación">
+                    </div>
+                    <div class="hz-content">
+                        <span class="hz-tag">Natural</span>
+                        <h3>Flores de Estación</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Left to Right -->
+            <div class="hz-row row-odd">
+                <div class="hz-item-wrapper">
+                    <div class="hz-inner-mask">
+                        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80"
+                            alt="Decoración">
+                    </div>
+                    <div class="hz-content">
+                        <span class="hz-tag">Estilo</span>
+                        <h3>Diseño y Arte</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Right to Left -->
+            <div class="hz-row row-even">
+                <div class="hz-item-wrapper">
+                    <div class="hz-inner-mask">
+                        <img src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?auto=format&fit=crop&w=1200&q=80"
+                            alt="Jardinería">
+                    </div>
+                    <div class="hz-content">
+                        <span class="hz-tag">Exterior</span>
+                        <h3>Jardín Soñado</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -99,7 +155,7 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="cta-container">
-                <a href="https://wa.me/5493442123456" target="_blank" class="btn-primary btn-whatsapp"><i
+                <a href="https://wa.me/543442488208" target="_blank" class="btn-primary btn-whatsapp"><i
                         class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp</a>
             </div>
         </div>
@@ -108,12 +164,11 @@
     <footer id="contacto" class="footer">
         <div class="footer-content">
             <div class="footer-logo">Mundo Jardín</div>
-            <p>9 de Julio 478, CdelU. ER <br> Tel: 430247</p>
+            <p>9 de Julio 478, CdelU. ER <br> Tel: 48-8208</p>
             <div class="social-icons">
                 <a href="https://www.instagram.com/viveromundojardin478/" target="_blank"><i
                         class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/543442488208" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
         <div class="footer-bottom">

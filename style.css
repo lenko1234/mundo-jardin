@@ -84,7 +84,6 @@ body {
     justify-content: space-between;
     padding: 0 10%;
     position: relative;
-    overflow: hidden;
     background: #ffffff;
     /* Pure white to match the logo */
 }
@@ -265,6 +264,8 @@ body {
     font-size: 3rem;
     color: var(--primary-dark);
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 10;
 }
 
 .section-desc {
@@ -272,6 +273,8 @@ body {
     max-width: 600px;
     margin: 0 auto 4rem;
     color: #666;
+    position: relative;
+    z-index: 10;
 }
 
 .features-grid {
@@ -444,6 +447,15 @@ body {
     font-family: var(--font-serif);
     font-size: 2rem;
     margin-bottom: 1rem;
+}
+
+.footer p {
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
 }
 
 .social-icons {

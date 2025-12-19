@@ -107,11 +107,97 @@ const setupLocationAnimation = () => {
     );
 };
 
+// Animación para la sección "Nuestro Espacio"
+const setupAboutAnimation = () => {
+    const aboutSection = document.querySelector('.about');
+    if (!aboutSection) return;
+
+    const title = aboutSection.querySelector('.section-title');
+    const desc = aboutSection.querySelector('.section-desc');
+    const featureCards = aboutSection.querySelectorAll('.feature-card');
+    const ctaContainer = aboutSection.querySelector('.cta-container');
+
+    // Título con fade-in desde arriba
+    gsap.fromTo(title,
+        { y: 50, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: title,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+
+    // Descripción con fade-in
+    gsap.fromTo(desc,
+        { y: 30, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: desc,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+
+    // Tarjetas con animación escalonada
+    gsap.fromTo(featureCards,
+        {
+            y: 60,
+            opacity: 0,
+            scale: 0.9
+        },
+        {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.15, // Delay entre cada tarjeta
+            ease: "back.out(1.2)", // Efecto de rebote sutil
+            scrollTrigger: {
+                trigger: '.features-grid',
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        }
+    );
+
+    // Botón CTA con fade-in
+    if (ctaContainer) {
+        gsap.fromTo(ctaContainer,
+            { y: 40, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                delay: 0.6,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ctaContainer,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    }
+};
+
 // Esperar a que GSAP esté cargado
 if (typeof gsap !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
         setupScrollAnimations();
         setupLocationAnimation();
+        setupAboutAnimation(); // Nueva función
     });
 } else {
     console.error('GSAP no está cargado');
@@ -138,34 +224,3 @@ hamburger.addEventListener('click', () => {
         navLinks.style.display = 'none';
     }
 });
-
-// Scroll Reveal
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, observerOptions);
-
-const hiddenElements = document.querySelectorAll('.feature-card, .gallery-item');
-hiddenElements.forEach((el) => observer.observe(el));
-
-// Add CSS class for animation in JS to keep it clean
-const style = document.createElement('style');
-style.innerHTML = `
-    .feature-card, .gallery-item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-    }
-    .feature-card.show, .gallery-item.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);

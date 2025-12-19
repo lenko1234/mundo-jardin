@@ -266,6 +266,8 @@ body {
     margin-bottom: 1rem;
     position: relative;
     z-index: 10;
+    opacity: 0;
+    /* Estado inicial para animación */
 }
 
 .section-desc {
@@ -275,6 +277,8 @@ body {
     color: #666;
     position: relative;
     z-index: 10;
+    opacity: 0;
+    /* Estado inicial para animación */
 }
 
 .features-grid {
@@ -289,6 +293,8 @@ body {
     border-radius: 20px;
     text-align: center;
     transition: transform 0.3s;
+    opacity: 0;
+    /* Estado inicial para animación */
 }
 
 .feature-card:hover {
@@ -512,6 +518,17 @@ body {
         /* Capa por encima del logo */
     }
 
+    /* Reducir tamaño de la burbuja en móvil para evitar scroll horizontal */
+    .blob-bg {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* Ajustar el recuadro de sombra de la imagen para que esté más centrado */
+    .hero-img {
+        box-shadow: 10px 10px 0px var(--secondary);
+    }
+
     .nav-links {
         display: none;
     }
@@ -523,7 +540,7 @@ body {
 
 /* Location Section */
 .location-section {
-    padding: 8rem 10%;
+    padding: 8rem 10% 4rem;
     background: var(--bg-light);
     position: relative;
 }
